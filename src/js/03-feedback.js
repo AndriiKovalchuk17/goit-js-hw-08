@@ -2,7 +2,7 @@ import { throttle } from 'lodash';
 
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector('input[name="email"]');
-const massage = document.querySelector('textarea[name="message"]');
+const massage = document.querySelector('textarea[name="massage"]');
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 form.addEventListener(
