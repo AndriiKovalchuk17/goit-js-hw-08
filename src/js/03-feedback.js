@@ -8,7 +8,7 @@ const LOCALSTORAGE_KEY = 'feedback-form-state';
 form.addEventListener(
     'input',
     throttle(e => {
-        const objectToSave = { email: email.value, message: message.value };
+        const objectToSave = { email: email.value, message: massage.value };
         
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(objectToSave));
     }, 500)
@@ -17,11 +17,11 @@ form.addEventListener(
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    if (email.value === '' || message.value === '') {
+    if (email.value === '' || massage.value === '') {
         return alert('Заповніть всі поля!');
     }
 
-    console.log({ email: email.value, message: message.value });
+    console.log({ email: email.value, massage: massage.value });
 
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
@@ -42,5 +42,5 @@ const strogeData = load(LOCALSTORAGE_KEY);
 
 if (strogeData) {
     email.value = strogeData.email;
-    message.value = strogeData.message;
+    massage.value = strogeData.massage;
 };
